@@ -1,0 +1,328 @@
+/* ============ Hair Academy — тёплая бежевая гамма (макет 1) ============ */
+:root {
+  --bg: #f1eee9;
+  --bg-hero: #eae6e0;
+  --bg-card: #e5e0d9;
+  --ink: #191817;
+  --ink-soft: #55524e;
+  --accent: #b5432f;
+  --pink: #d9a2a0;
+  --line: #d8d3cb;
+  --radius: 18px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3 { font-family: "Prata", serif; font-weight: 400; }
+
+.container { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+
+/* ------------------------------- Кнопки ------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: opacity .2s;
+}
+.btn:hover { opacity: .85; }
+.btn-dark { background: var(--ink); color: #fff; }
+
+.link-more { font-size: 14px; font-weight: 500; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+.link-more .arr { border: none; margin-left: 4px; }
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex: none; }
+
+/* ------------------------------- Шапка -------------------------------- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+.logo { font-family: "Prata", serif; font-size: 17px; line-height: 1.15; letter-spacing: .04em; }
+.nav { display: flex; gap: 28px; font-size: 13.5px; }
+.nav a:hover { color: var(--accent); }
+.header-right { display: flex; align-items: center; gap: 14px; }
+.header-right .btn { padding: 11px 24px; }
+.burger {
+  width: 44px; height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+}
+.burger span { width: 16px; height: 1.5px; background: var(--ink); display: block; }
+.burger span:last-child { width: 10px; align-self: flex-end; margin-right: 14px; }
+
+/* -------------------------------- Hero -------------------------------- */
+.hero-inner {
+  position: relative;
+  background: var(--bg-hero);
+  border-radius: var(--radius);
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  overflow: hidden;
+  min-height: 620px;
+}
+.hero-text { padding: 72px 20px 48px 56px; display: flex; flex-direction: column; }
+.hero-text h1 { font-size: clamp(38px, 4.6vw, 58px); line-height: 1.12; }
+.hero-sub { margin-top: 26px; color: var(--ink-soft); font-size: 15px; }
+.hero-actions { display: flex; align-items: center; gap: 28px; margin-top: 34px; }
+.hero-students { display: flex; align-items: center; gap: 18px; margin-top: auto; padding-top: 56px; }
+.hero-students p { font-size: 12.5px; color: var(--ink-soft); line-height: 1.45; }
+.avatars { display: flex; align-items: center; }
+.avatars img, .avatar-more {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--bg-hero);
+  margin-left: -12px;
+}
+.avatars img:first-child { margin-left: 0; }
+.avatar-more {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #fff; font-size: 11px; font-weight: 600;
+}
+.hero-photo { position: relative; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.hero-badge {
+  position: absolute;
+  top: 84px; right: 40px;
+  width: 150px; height: 88px;
+  border: 1px solid rgba(25,24,23,.45);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9.5px; letter-spacing: .16em; text-align: center; line-height: 1.7;
+  color: var(--ink);
+  background: rgba(240,237,232,.25);
+  backdrop-filter: blur(2px);
+}
+.badge-flower {
+  position: absolute; top: -11px; left: -6px;
+  width: 26px; height: 26px; color: var(--accent);
+}
+
+/* ------------------------------ Статистика ---------------------------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: 44px;
+  padding-bottom: 44px;
+}
+.stat { text-align: center; padding: 6px 12px; border-left: 1px solid var(--line); }
+.stat:first-child { border-left: none; }
+.stat b { font-family: "Prata", serif; font-weight: 400; font-size: 30px; display: block; }
+.stat span { font-size: 12.5px; color: var(--ink-soft); }
+
+/* -------------------------- Заголовки секций -------------------------- */
+.section-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--line);
+  padding-top: 36px;
+  margin-bottom: 44px;
+}
+.section-head h2 { font-size: clamp(30px, 3.4vw, 42px); line-height: 1.15; }
+.section-num {
+  font-family: "Prata", serif;
+  font-size: clamp(60px, 7vw, 96px);
+  line-height: 1;
+  color: #cbc5bc;
+}
+.head-right { display: flex; align-items: flex-start; gap: 28px; }
+
+/* ------------------------------ Направления --------------------------- */
+.directions { padding-top: 30px; }
+.dir-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.dir-card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 3 / 3.4;
+  color: #fff;
+}
+.dir-card > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.dir-card::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,9,8,.72) 0%, rgba(10,9,8,.15) 45%, transparent 65%);
+}
+.dir-icon {
+  position: absolute; top: 20px; left: 20px; z-index: 2;
+  width: 46px; height: 46px; border-radius: 50%;
+  background: rgba(248,246,243,.92);
+  color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+}
+.dir-icon svg { width: 20px; height: 20px; }
+.dir-info { position: absolute; left: 24px; right: 24px; bottom: 24px; z-index: 2; }
+.dir-info h3 { font-size: 24px; margin-bottom: 8px; }
+.dir-info p { font-size: 13px; color: rgba(255,255,255,.82); max-width: 90%; }
+.round-arr {
+  margin-top: 16px;
+  width: 40px; height: 40px;
+  border: 1px solid rgba(255,255,255,.6);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  transition: background .2s;
+}
+.round-arr:hover { background: rgba(255,255,255,.18); }
+
+/* -------------------------------- Формат ------------------------------ */
+.format { padding-top: 72px; }
+.format-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.format-item { padding: 4px 26px 10px 26px; border-left: 1px solid var(--line); }
+.format-item:first-child { border-left: none; padding-left: 0; }
+.format-item svg { width: 26px; height: 26px; color: var(--accent); margin-bottom: 18px; }
+.format-item h4 { font-size: 15.5px; font-weight: 600; line-height: 1.35; margin-bottom: 10px; }
+.format-item p { font-size: 12.5px; color: var(--ink-soft); }
+
+/* -------------------------------- Обо мне ----------------------------- */
+#about { padding-top: 64px; }
+.about-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 40px;
+  padding: 48px 48px;
+  align-items: center;
+}
+.about-text h2 { font-size: clamp(26px, 2.8vw, 36px); line-height: 1.2; }
+.about-desc { margin: 22px 0 26px; color: var(--ink-soft); font-size: 14px; max-width: 46ch; }
+.about-photo { position: relative; border-radius: 14px; overflow: hidden; }
+.about-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; filter: grayscale(1); }
+.signature {
+  position: absolute; right: 18px; bottom: 8px;
+  font-family: "Great Vibes", cursive;
+  font-size: 34px;
+  color: #d9a2a0;
+  transform: rotate(-8deg);
+}
+
+/* -------------------------------- Отзывы ------------------------------ */
+.reviews { padding-top: 72px; }
+.slider-arrows { display: flex; gap: 10px; margin-top: 8px; }
+.round-btn {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: none;
+  font-size: 15px;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background .2s;
+}
+.round-btn:hover { background: #fff; }
+.reviews-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 44px) / 3);
+  gap: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.reviews-track::-webkit-scrollbar { display: none; }
+.review-card {
+  background: #faf8f5;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+.review-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.review-head img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.review-head b { display: block; font-size: 13.5px; }
+.review-head span { font-size: 12px; color: var(--ink-soft); }
+.review-card > p { font-size: 13px; color: #3c3936; flex: 1; }
+.review-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+.review-photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; }
+
+/* --------------------------------- CTA -------------------------------- */
+#cta { padding-top: 72px; }
+.cta-banner {
+  position: relative;
+  background: var(--pink);
+  border-radius: var(--radius);
+  display: grid;
+  grid-template-columns: 1.1fr auto;
+  align-items: center;
+  gap: 32px;
+  padding: 56px 34% 56px 48px;
+  overflow: hidden;
+}
+.cta-text h2 { font-size: clamp(26px, 2.8vw, 36px); line-height: 1.18; color: #201512; }
+.cta-text p { margin-top: 14px; font-size: 13.5px; color: rgba(32,21,18,.75); }
+.cta-photo { position: absolute; top: 0; right: 0; bottom: 0; width: 30%; }
+.cta-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+/* -------------------------------- Подвал ------------------------------ */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-top: 44px;
+  padding-bottom: 34px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+.footer-links { display: flex; gap: 28px; }
+.footer a:hover { color: var(--accent); }
+
+/* ------------------------------ Адаптив ------------------------------- */
+@media (max-width: 1000px) {
+  .nav { display: none; }
+  .hero-inner { grid-template-columns: 1fr; min-height: 0; }
+  .hero-text { padding: 44px 28px; }
+  .hero-photo img { max-height: 480px; }
+  .hero-badge { top: auto; bottom: 24px; right: 24px; }
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 20px 0; }
+  .stat:nth-child(3) { border-left: none; }
+  .dir-grid, .format-grid { grid-template-columns: 1fr 1fr; gap: 22px; }
+  .format-item { border-left: none; padding: 0; }
+  .about-card { grid-template-columns: 1fr; padding: 32px; }
+  .reviews-track { grid-auto-columns: 85%; }
+  .cta-banner { grid-template-columns: 1fr; padding: 36px; }
+  .cta-photo { display: none; }
+}
+@media (max-width: 620px) {
+  .dir-grid, .format-grid { grid-template-columns: 1fr; }
+  .header-right .btn { display: none; }
+}
