@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prata&family=Inter:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/academy.css">
+<link rel="stylesheet" href="css/academy.css?v=2">
 </head>
 <body>
 
@@ -22,7 +22,7 @@
     <a href="#about">Обо мне</a>
   </nav>
   <div class="header-right">
-    <a class="btn btn-dark" href="#cta">Записаться</a>
+    <a class="btn btn-dark" href="#contacts">Записаться</a>
     <button class="burger" aria-label="Меню"><span></span><span></span></button>
   </div>
 </header>
@@ -60,7 +60,7 @@
 
 <!-- ============================== STATS ============================= -->
 <section class="stats container">
-  <div class="stat"><b>8+</b><span>лет опыта</span></div>
+  <div class="stat"><b>30+</b><span>лет опыта</span></div>
   <div class="stat"><b>30+</b><span>мастер-классов</span></div>
   <div class="stat"><b>1500+</b><span>довольных учеников</span></div>
   <div class="stat"><b>100%</b><span>практики</span></div>
@@ -150,7 +150,7 @@
   <div class="about-card">
     <div class="about-text">
       <p class="label"><span class="dot"></span>ОБО МНЕ</p>
-      <h2>Я — практикующий<br>мастер и преподаватель<br>с опытом более 8 лет</h2>
+      <h2>Я — практикующий<br>мастер и преподаватель<br>с опытом более 30 лет</h2>
       <p class="about-desc">Передаю не просто теорию, а систему, которую использую в работе каждый день. Моя цель — чтобы вы уверенно чувствовали себя за креслом и росли профессионально.</p>
       <a class="link-more" href="#reviews">Читать подробнее <span class="arr">&rarr;</span></a>
     </div>
@@ -219,22 +219,49 @@
       <h2>Готовы прокачать<br>свои навыки?</h2>
       <p>Выберите подходящий мастер-класс<br>и начните путь к новому уровню.</p>
     </div>
-    <a class="btn btn-dark" href="masterclass.html">Выбрать мастер-класс <span class="arr">&rarr;</span></a>
+    <a class="btn btn-dark" href="#contacts">Выбрать мастер-класс <span class="arr">&rarr;</span></a>
     <div class="cta-photo"><img src="img/academy/cta.png" alt="Модель"></div>
+  </div>
+</section>
+
+<!-- ============================= CONTACTS =========================== -->
+<section class="container" id="contacts">
+  <div class="contacts-card">
+    <div class="contacts-info">
+      <p class="label"><span class="dot"></span>КОНТАКТЫ</p>
+      <h2>Запишитесь<br>на мастер-класс</h2>
+      <a class="phone-big" href="tel:+79080976558">8 908 097 65 58</a>
+      <ul class="contacts-list">
+        <li><a href="https://yandex.ru/maps/56/chelyabinsk/?ll=61.288653%2C55.210143&mode=poi&poi%5Bpoint%5D=61.288557%2C55.210111&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D189324838168&z=19.94" target="_blank" rel="noopener">Краснопольский пр-т, 34, Челябинск</a></li>
+        <li>Ежедневно 9:00–20:00</li>
+      </ul>
+      <div class="contacts-socials">
+        <a class="btn btn-dark" href="https://n1324125.yclients.com" target="_blank" rel="noopener">Записаться онлайн</a>
+        <a class="chip" href="https://api.whatsapp.com/send/?phone=79080976558" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="chip" href="https://vk.com/van_imagestudio" target="_blank" rel="noopener">ВКонтакте</a>
+      </div>
+    </div>
+    <form class="callback" onsubmit="return sendCallback(event, this)">
+      <h3>Оставьте номер —<br>мы перезвоним</h3>
+      <p>Перезвоним в течение дня и подберём мастер-класс под ваши цели.</p>
+      <input type="tel" name="phone" inputmode="tel" placeholder="Ваш телефон" required>
+      <button type="submit" class="btn btn-dark">Жду звонка <span class="arr">&rarr;</span></button>
+      <span class="callback-note">Нажимая кнопку, вы соглашаетесь на обработку данных</span>
+    </form>
   </div>
 </section>
 
 <!-- ============================= FOOTER ============================= -->
 <footer class="footer container">
-  <span>&copy; Hair Academy, 2026</span>
+  <span>&copy; Имидж студия V.A.N, 2026</span>
   <div class="footer-links">
-    <a href="#">Instagram</a>
-    <a href="#">Telegram</a>
-    <a href="#">Политика конфиденциальности</a>
+    <a href="tel:+79080976558">8 908 097 65 58</a>
+    <a href="https://api.whatsapp.com/send/?phone=79080976558" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://vk.com/van_imagestudio" target="_blank" rel="noopener">ВКонтакте</a>
   </div>
-  <a href="#">Контакты</a>
+  <a href="#contacts">Контакты</a>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=2"></script>
 </body>
 </html>

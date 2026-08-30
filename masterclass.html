@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Manrope:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/masterclass.css">
+<link rel="stylesheet" href="css/masterclass.css?v=2">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
     <a href="#stories">Отзывы</a>
     <a href="#cta">Контакты</a>
   </nav>
-  <a class="btn btn-dark" href="#cta">Записаться</a>
+  <a class="btn btn-dark" href="#contacts">Записаться</a>
 </header>
 
 <!-- ============================== HERO ============================== -->
@@ -217,7 +217,7 @@
       <div>
         <h2>ГОТОВЫ ПРОКАЧАТЬ<br>СВОЕ МАСТЕРСТВО?</h2>
         <p>Выберите мастер-класс и начните свой путь к новым вершинам</p>
-        <a class="btn btn-white" href="index.html">Записаться сейчас <span class="circ">&rarr;</span></a>
+        <a class="btn btn-white" href="#contacts">Записаться сейчас <span class="circ">&rarr;</span></a>
       </div>
       <ul class="cta-list">
         <li>Удобный формат обучения</li>
@@ -228,16 +228,43 @@
   </div>
 </section>
 
-<footer class="footer container">
-  <span>&copy; Hair Masterclass, 2026</span>
-  <div class="footer-links">
-    <a href="#">Instagram</a>
-    <a href="#">Telegram</a>
-    <a href="#">Политика конфиденциальности</a>
+<!-- ============================= CONTACTS =========================== -->
+<section class="container" id="contacts">
+  <div class="contacts-card">
+    <div class="contacts-info">
+      <p class="label"><span class="dot"></span>Контакты</p>
+      <h2>ЗАПИШИТЕСЬ<br>НА МАСТЕР-КЛАСС</h2>
+      <a class="phone-big" href="tel:+79080976558">8 908 097 65 58</a>
+      <ul class="contacts-list">
+        <li><a href="https://yandex.ru/maps/56/chelyabinsk/?ll=61.288653%2C55.210143&mode=poi&poi%5Bpoint%5D=61.288557%2C55.210111&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D189324838168&z=19.94" target="_blank" rel="noopener">Краснопольский пр-т, 34, Челябинск</a></li>
+        <li>Ежедневно 9:00–20:00</li>
+      </ul>
+      <div class="contacts-socials">
+        <a class="btn btn-dark" href="https://n1324125.yclients.com" target="_blank" rel="noopener">Записаться онлайн</a>
+        <a class="chip" href="https://api.whatsapp.com/send/?phone=79080976558" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="chip" href="https://vk.com/van_imagestudio" target="_blank" rel="noopener">ВКонтакте</a>
+      </div>
+    </div>
+    <form class="callback" onsubmit="return sendCallback(event, this)">
+      <h3>Оставьте номер —<br>мы перезвоним</h3>
+      <p>Перезвоним в течение дня и подберём мастер-класс под ваши цели.</p>
+      <input type="tel" name="phone" inputmode="tel" placeholder="Ваш телефон" required>
+      <button type="submit" class="btn btn-dark">Жду звонка <span class="circ">&rarr;</span></button>
+      <span class="callback-note">Нажимая кнопку, вы соглашаетесь на обработку данных</span>
+    </form>
   </div>
-  <a href="#">Контакты</a>
+</section>
+
+<footer class="footer container">
+  <span>&copy; Имидж студия V.A.N, 2026</span>
+  <div class="footer-links">
+    <a href="tel:+79080976558">8 908 097 65 58</a>
+    <a href="https://api.whatsapp.com/send/?phone=79080976558" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://vk.com/van_imagestudio" target="_blank" rel="noopener">ВКонтакте</a>
+  </div>
+  <a href="#contacts">Контакты</a>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=2"></script>
 </body>
 </html>

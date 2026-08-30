@@ -30,7 +30,7 @@ h1, h2, h3 {
   letter-spacing: .02em;
 }
 
-.container { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.container { width: 100%; max-width: none; margin: 0 auto; padding: 0 clamp(24px, 3.6vw, 72px); }
 
 .label {
   display: flex;
@@ -351,6 +351,65 @@ h1, h2, h3 {
   background: var(--rose);
   flex: none;
 }
+
+/* ------------------------------ Контакты ------------------------------ */
+#contacts { padding-top: 72px; }
+.contacts-card {
+  background: var(--panel);
+  border-radius: calc(var(--radius) + 8px);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  padding: 48px;
+}
+.contacts-info h2 { font-size: clamp(26px, 3vw, 38px); line-height: 1.18; margin-bottom: 24px; }
+.phone-big {
+  display: inline-block;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  font-size: clamp(30px, 3.4vw, 46px);
+  color: var(--rose);
+  transition: opacity .2s;
+}
+.phone-big:hover { opacity: .75; }
+.contacts-list { list-style: none; margin: 22px 0 28px; display: flex; flex-direction: column; gap: 8px; }
+.contacts-list li { font-size: 14.5px; color: var(--ink-soft); }
+.contacts-list a { border-bottom: 1px solid var(--line); padding-bottom: 1px; }
+.contacts-list a:hover { color: var(--rose); }
+.contacts-socials { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.chip {
+  display: inline-flex; align-items: center;
+  padding: 12px 22px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 14px; font-weight: 500;
+  background: #fff;
+  transition: background .2s, color .2s;
+}
+.chip:hover { background: var(--ink); color: #fff; }
+.callback {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 24px rgba(84,52,54,.06);
+}
+.callback h3 { font-family: "Playfair Display", serif; font-weight: 500; font-size: 24px; line-height: 1.2; margin-bottom: 12px; }
+.callback > p { font-size: 13.5px; color: var(--ink-soft); margin-bottom: 22px; }
+.callback input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 15px;
+  font-family: inherit;
+  margin-bottom: 14px;
+  outline: none;
+}
+.callback input:focus { border-color: var(--rose); }
+.callback button { justify-content: center; width: 100%; cursor: pointer; border: none; font-family: inherit; }
+.callback-note { font-size: 11px; color: var(--ink-soft); margin-top: 14px; text-align: center; }
 
 /* -------------------------------- Подвал ------------------------------ */
 .footer {
