@@ -365,23 +365,68 @@ h1, h2, h3 { font-family: "Prata", serif; font-weight: 400; }
 .footer-links { display: flex; gap: 28px; }
 .footer a:hover { color: var(--accent); }
 
+.nav-cta { display: none; }
+body.menu-open { overflow: hidden; }
+
 /* ------------------------------ Адаптив ------------------------------- */
 @media (max-width: 1000px) {
-  .nav { display: none; }
+  /* Мобильное меню-оверлей */
+  .burger { z-index: 60; }
+  .nav {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-size: 22px;
+    transform: translateX(100%);
+    transition: transform .32s ease;
+    z-index: 55;
+  }
+  .nav.open { transform: none; }
+  .nav a { font-family: "Prata", serif; }
+  .nav-cta {
+    display: inline-flex;
+    background: var(--ink);
+    color: #fff;
+    padding: 14px 40px;
+    border-radius: 999px;
+    font-size: 17px;
+    margin-top: 8px;
+  }
+
   .hero-inner { grid-template-columns: 1fr; min-height: 0; }
-  .hero-text { padding: 44px 28px; }
-  .hero-photo img { max-height: 480px; }
+  .hero-text { padding: 40px 26px 36px; order: 1; }
+  .hero-photo { order: 2; }
+  .hero-photo img { max-height: 520px; }
   .hero-badge { top: auto; bottom: 24px; right: 24px; }
-  .stats { grid-template-columns: repeat(2, 1fr); gap: 20px 0; }
+  .hero-students { padding-top: 40px; }
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 26px 0; }
   .stat:nth-child(3) { border-left: none; }
-  .dir-grid, .format-grid { grid-template-columns: 1fr 1fr; gap: 22px; }
+  .dir-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .format-grid { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
   .format-item { border-left: none; padding: 0; }
   .about-card { grid-template-columns: 1fr; padding: 32px; }
-  .reviews-track { grid-auto-columns: 85%; }
-  .cta-banner { grid-template-columns: 1fr; padding: 36px; }
-  .cta-photo { display: none; }
+  .reviews-track { grid-auto-columns: 88%; }
+  .cta-banner { grid-template-columns: 1fr; padding: 36px 34% 36px 34px; }
+  .contacts-card { grid-template-columns: 1fr; gap: 28px; padding: 34px; }
 }
 @media (max-width: 620px) {
-  .dir-grid, .format-grid { grid-template-columns: 1fr; }
   .header-right .btn { display: none; }
+  .header { padding-top: 18px; padding-bottom: 18px; }
+  .hero-text h1 { font-size: 40px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .section-head { flex-wrap: wrap; }
+  .section-num { font-size: 56px; }
+  .dir-grid { grid-template-columns: 1fr; }
+  .dir-card { aspect-ratio: 3 / 3.1; }
+  .format-grid { grid-template-columns: 1fr; }
+  .cta-banner { padding: 32px; }
+  .cta-photo { display: none; }
+  .phone-big { font-size: clamp(28px, 9vw, 40px); }
+  .contacts-socials { gap: 10px; }
+  .callback { padding: 26px; }
+  .footer { justify-content: flex-start; gap: 14px; }
 }
