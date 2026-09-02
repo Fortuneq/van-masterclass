@@ -47,20 +47,29 @@ document.querySelectorAll(".accordion").forEach(function (acc) {
   });
 })();
 
-// Форма обратного звонка → отправляем заявку студии в WhatsApp
+// Форма обратного звонка → заявка уходит на сервер студии
 function sendCallback(e, form) {
   e.preventDefault();
   var phone = (form.phone.value || "").trim();
   if (!phone) return false;
-  var text = encodeURIComponent("Здравствуйте! Перезвоните мне, пожалуйста: " + phone);
-  window.open("https://api.whatsapp.com/send/?phone=79080976558&text=" + text, "_blank");
-  form.reset();
   var btn = form.querySelector("button");
-  if (btn) {
-    var old = btn.innerHTML;
-    btn.innerHTML = "Заявка отправлена ✓";
-    setTimeout(function () { btn.innerHTML = old; }, 3000);
-  }
+  var old = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = "Отправляем…";
+  fetch("/api/lead", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ phone: phone, page: location.pathname })
+  }).then(function (r) {
+    if (!r.ok) throw new Error("bad");
+    form.reset();
+    btn.innerHTML = "Заявка принята ✓";
+  }).catch(function () {
+    btn.innerHTML = "Позвоните: 8 908 097 65 58";
+  }).finally(function () {
+    btn.disabled = false;
+    setTimeout(function () { btn.innerHTML = old; }, 4000);
+  });
   return false;
 }
 
