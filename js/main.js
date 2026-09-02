@@ -73,6 +73,31 @@ function sendCallback(e, form) {
   return false;
 }
 
+// Модалки направлений (описание «что будет»)
+(function () {
+  function open(id) {
+    var m = document.getElementById("modal-" + id);
+    if (!m) return;
+    m.hidden = false;
+    document.body.classList.add("menu-open");
+  }
+  function closeAll() {
+    document.querySelectorAll(".modal-overlay").forEach(function (m) { m.hidden = true; });
+    document.body.classList.remove("menu-open");
+  }
+  document.querySelectorAll("[data-modal]").forEach(function (b) {
+    b.addEventListener("click", function () { open(b.dataset.modal); });
+  });
+  document.querySelectorAll(".modal-overlay").forEach(function (ov) {
+    ov.addEventListener("click", function (e) {
+      if (e.target === ov || (e.target.closest && e.target.closest("[data-close]"))) closeAll();
+    });
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeAll();
+  });
+})();
+
 // Плавный скролл по якорям
 document.querySelectorAll('a[href^="#"]').forEach(function (a) {
   a.addEventListener("click", function (e) {
